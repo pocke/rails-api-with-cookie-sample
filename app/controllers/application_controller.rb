@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+  include ActionController::Cookies
+
   def root
     t = (cookies['count'] || 1).to_i
     cookies['count'] = t + 1
